@@ -1,5 +1,11 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	let inMotion: boolean = false;
+
+	onMount(() => {
+		shuffleClip();
+	});
 
 	const shuffleClip = () => {
 		// Generate 8 random numbers between 0 and 10
@@ -16,7 +22,7 @@
 	function shuffle() {
 		if (inMotion) {
 			shuffleClip();
-			window.setTimeout(shuffle, 400);
+			window.setTimeout(shuffle, 300);
 		}
 	}
 
@@ -51,7 +57,7 @@
 		justify-content: center;
 	}
 	#button {
-		transition: 0.4s;
+		transition: 0.3s;
 		font-size: 2rem;
 		// font-family: '';
 		// must be absolutely positioned
