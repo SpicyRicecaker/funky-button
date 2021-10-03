@@ -14,9 +14,9 @@
 	let buttonBinding: HTMLButtonElement;
 
 	function shuffle() {
-		shuffleClip();
 		if (inMotion) {
-			window.setTimeout(shuffle, 200);
+			shuffleClip();
+			window.setTimeout(shuffle, 400);
 		}
 	}
 
@@ -32,13 +32,8 @@
 
 <!-- Button in the center of the page -->
 <div id="button_wrapper">
-	<button
-		id="button"
-		bind:this={buttonBinding}
-		on:mouseover={playback}
-		on:focus={playback}
-		on:mouseout={playback}
-		on:blur={playback}>Funky Banana</button
+	<button id="button" bind:this={buttonBinding} on:mouseenter={playback} on:mouseleave={playback}
+		>Funky button!</button
 	>
 </div>
 
@@ -56,7 +51,7 @@
 		justify-content: center;
 	}
 	#button {
-		transition: 0.3s;
+		transition: 0.4s;
 		font-size: 2rem;
 		// font-family: '';
 		// must be absolutely positioned
